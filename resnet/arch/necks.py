@@ -57,4 +57,4 @@ class FPNNeck(nn.Module):
             outputs.append(processed_feature)
         
         
-        return outputs[-1] if self.final_only else outputs
+        return outputs[0] if self.final_only else outputs
