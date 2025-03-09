@@ -45,27 +45,23 @@ def get_dataloaders(batch_size):
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
     ])
     
-    # Load the full training dataset
-    full_train_dataset = torchvision.datasets.CIFAR10(
+    # Training dataset with training transforms
+    train_dataset = torchvision.datasets.CIFAR10(
         root='./data', train=True, download=True, transform=train_transform
     )
-    
-    # Split the training dataset: 80% training, 20% validation
-    train_size = int(0.8 * len(full_train_dataset))
-    val_size = len(full_train_dataset) - train_size
-    train_dataset, val_dataset = random_split(
-        full_train_dataset, [train_size, val_size],
-        generator=torch.Generator().manual_seed(42)
+
+    # Validation dataset with test transforms
+    val_dataset = torchvision.datasets.CIFAR10(
+        root='./data', train=True, download=False, transform=test_transform
     )
-    
-    # Create a validation dataset with test transforms
-    val_dataset.dataset.transform = test_transform
-    
-    # Test dataset
-    test_dataset = torchvision.datasets.CIFAR10(
-        root='./data', train=False, download=True, transform=test_transform
-    )
-    
+
+    # Optionally, split indices if needed (or use Subset)
+    train_indices = list(range(0, int(0.8 * len(train_dataset))))
+    val_indices = list(range(int(0.8 * len(train_dataset)), len(train_dataset)))
+
+    train_dataset = torch.utils.data.Subset(train_dataset, train_indices)
+    val_dataset = torch.utils.data.Subset(val_dataset, val_indices)
+
     # Create data loaders
     train_loader = DataLoader(
         train_dataset, batch_size=batch_size, shuffle=True, 
@@ -76,13 +72,8 @@ def get_dataloaders(batch_size):
         val_dataset, batch_size=batch_size, shuffle=False, 
         num_workers=4, pin_memory=True
     )
-    
-    test_loader = DataLoader(
-        test_dataset, batch_size=batch_size, shuffle=False, 
-        num_workers=4, pin_memory=True
-    )
-    
-    return train_loader, val_loader, test_loader
+        
+    return train_loader, val_loader
 
 def train_one_epoch(model, train_loader, criterion, optimizer, device):
     model.train()
@@ -160,7 +151,7 @@ def main():
     print(f"Using device: {device}")
     
     # Get dataloaders
-    train_loader, val_loader, test_loader = get_dataloaders(args.batch_size)
+    train_loader, val_loader = get_dataloaders(args.batch_size)
     
     # Create model configuration for CIFAR-10
     config = {
@@ -221,21 +212,6 @@ def main():
                 'config': config,
             }, checkpoint_path)
             print(f"Checkpoint saved to {checkpoint_path}")
-    
-    # Final evaluation on test set
-    model.eval()
-    correct = 0
-    total = 0
-    
-    with torch.no_grad():
-        for inputs, targets in tqdm(test_loader, desc='Testing'):
-            inputs, targets = inputs.to(device), targets.to(device)
-            outputs = model(inputs)
-            _, predicted = outputs.max(1)
-            total += targets.size(0)
-            correct += predicted.eq(targets).sum().item()
-    
-    print(f"\nTest Accuracy: {100. * correct / total:.2f}%")
 
 if __name__ == "__main__":
     main()
