@@ -1,0 +1,272 @@
+{
+  "letter_vocab": {
+    "<PAD>": {
+      "index": 0,
+      "frequency": 0
+    },
+    "<UNK>": {
+      "index": 1,
+      "frequency": 0
+    },
+    "F": {
+      "index": 2,
+      "frequency": 1797
+    },
+    "i": {
+      "index": 3,
+      "frequency": 45537
+    },
+    "r": {
+      "index": 4,
+      "frequency": 48889
+    },
+    "s": {
+      "index": 5,
+      "frequency": 49696
+    },
+    "t": {
+      "index": 6,
+      "frequency": 67009
+    },
+    " ": {
+      "index": 7,
+      "frequency": 169892
+    },
+    "C": {
+      "index": 8,
+      "frequency": 3820
+    },
+    "z": {
+      "index": 9,
+      "frequency": 356
+    },
+    "e": {
+      "index": 10,
+      "frequency": 94611
+    },
+    "n": {
+      "index": 11,
+      "frequency": 48529
+    },
+    ":": {
+      "index": 12,
+      "frequency": 10316
+    },
+    "\n": {
+      "index": 13,
+      "frequency": 39999
+    },
+    "B": {
+      "index": 14,
+      "frequency": 2761
+    },
+    "f": {
+      "index": 15,
+      "frequency": 15770
+    },
+    "o": {
+      "index": 16,
+      "frequency": 65798
+    },
+    "w": {
+      "index": 17,
+      "frequency": 17585
+    },
+    "p": {
+      "index": 18,
+      "frequency": 10808
+    },
+    "c": {
+      "index": 19,
+      "frequency": 15623
+    },
+    "d": {
+      "index": 20,
+      "frequency": 31358
+    },
+    "a": {
+      "index": 21,
+      "frequency": 55507
+    },
+    "y": {
+      "index": 22,
+      "frequency": 20448
+    },
+    "u": {
+      "index": 23,
+      "frequency": 26584
+    },
+    "h": {
+      "index": 24,
+      "frequency": 51310
+    },
+    ",": {
+      "index": 25,
+      "frequency": 19846
+    },
+    "m": {
+      "index": 26,
+      "frequency": 22243
+    },
+    "k": {
+      "index": 27,
+      "frequency": 7088
+    },
+    ".": {
+      "index": 28,
+      "frequency": 7885
+    },
+    "A": {
+      "index": 29,
+      "frequency": 7819
+    },
+    "l": {
+      "index": 30,
+      "frequency": 33339
+    },
+    "S": {
+      "index": 31,
+      "frequency": 4523
+    },
+    "Y": {
+      "index": 32,
+      "frequency": 1718
+    },
+    "v": {
+      "index": 33,
+      "frequency": 7793
+    },
+    "?": {
+      "index": 34,
+      "frequency": 2462
+    },
+    "R": {
+      "index": 35,
+      "frequency": 4869
+    },
+    "M": {
+      "index": 36,
+      "frequency": 2840
+    },
+    "W": {
+      "index": 37,
+      "frequency": 3530
+    },
+    "'": {
+      "index": 38,
+      "frequency": 6187
+    },
+    "L": {
+      "index": 39,
+      "frequency": 3876
+    },
+    "I": {
+      "index": 40,
+      "frequency": 11832
+    },
+    "N": {
+      "index": 41,
+      "frequency": 5079
+    },
+    "g": {
+      "index": 42,
+      "frequency": 13356
+    },
+    ";": {
+      "index": 43,
+      "frequency": 3628
+    },
+    "b": {
+      "index": 44,
+      "frequency": 11321
+    },
+    "!": {
+      "index": 45,
+      "frequency": 2172
+    },
+    "O": {
+      "index": 46,
+      "frequency": 5481
+    },
+    "j": {
+      "index": 47,
+      "frequency": 628
+    },
+    "V": {
+      "index": 48,
+      "frequency": 798
+    },
+    "-": {
+      "index": 49,
+      "frequency": 1897
+    },
+    "T": {
+      "index": 50,
+      "frequency": 7015
+    },
+    "H": {
+      "index": 51,
+      "frequency": 3068
+    },
+    "E": {
+      "index": 52,
+      "frequency": 6041
+    },
+    "U": {
+      "index": 53,
+      "frequency": 3313
+    },
+    "D": {
+      "index": 54,
+      "frequency": 2089
+    },
+    "P": {
+      "index": 55,
+      "frequency": 1641
+    },
+    "q": {
+      "index": 56,
+      "frequency": 609
+    },
+    "x": {
+      "index": 57,
+      "frequency": 529
+    },
+    "J": {
+      "index": 58,
+      "frequency": 320
+    },
+    "G": {
+      "index": 59,
+      "frequency": 2399
+    },
+    "K": {
+      "index": 60,
+      "frequency": 1584
+    },
+    "Q": {
+      "index": 61,
+      "frequency": 231
+    },
+    "&": {
+      "index": 62,
+      "frequency": 3
+    },
+    "Z": {
+      "index": 63,
+      "frequency": 198
+    },
+    "X": {
+      "index": 64,
+      "frequency": 112
+    },
+    "3": {
+      "index": 65,
+      "frequency": 27
+    },
+    "$": {
+      "index": 66,
+      "frequency": 1
+    }
+  }
+}
