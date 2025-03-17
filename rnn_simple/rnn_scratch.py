@@ -34,7 +34,7 @@ class RNNLayer(nn.Module):
             h_0 = torch.zeros(B, self.hidden_size).to(X.device)
         
         h_t = h_0
-        H = []
+        H = [] # output of all hidden states
         for t in range(T):
             h_t = self.cell(X[:,t,:], h_t)
             H.append(h_t)
